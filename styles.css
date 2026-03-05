@@ -1,0 +1,445 @@
+/* Reset and base styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f5f7fa;
+    color: #333;
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Header styles */
+header {
+    text-align: center;
+    margin-bottom: 30px;
+    padding: 20px 0;
+}
+
+header h1 {
+    font-size: 2.5rem;
+    color: #2c3e50;
+    margin-bottom: 10px;
+}
+
+header p {
+    font-size: 1.1rem;
+    color: #7f8c8d;
+}
+
+/* Navigation styles */
+.view-toggle {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+    gap: 10px;
+}
+
+.view-toggle button {
+    padding: 10px 20px;
+    border: 1px solid #ddd;
+    background-color: #fff;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+}
+
+.view-toggle button:hover {
+    background-color: #ecf0f1;
+}
+
+.view-toggle button.active {
+    background-color: #3498db;
+    color: white;
+    border-color: #3498db;
+}
+
+/* Action buttons */
+.actions {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.btn-primary {
+    background-color: #3498db;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+}
+
+.btn-primary:hover {
+    background-color: #2980b9;
+}
+
+.btn-secondary {
+    background-color: #95a5a6;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+}
+
+.btn-secondary:hover {
+    background-color: #7f8c8d;
+}
+
+.btn-danger {
+    background-color: #e74c3c;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+}
+
+.btn-danger:hover {
+    background-color: #c0392b;
+}
+
+/* Filters */
+.filters {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 20px;
+    padding: 15px;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.filters input,
+.filters select,
+.filters button {
+    padding: 8px 12px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 0.9rem;
+}
+
+.filters button {
+    background-color: #3498db;
+    color: white;
+    cursor: pointer;
+}
+
+.filters button:hover {
+    background-color: #2980b9;
+}
+
+/* Table styles */
+.view {
+    display: none;
+}
+
+.view.active {
+    display: block;
+}
+
+#jobTable {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: #fff;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+#jobTable th,
+#jobTable td {
+    padding: 12px 15px;
+    text-align: left;
+    border-bottom: 1px solid #eee;
+}
+
+#jobTable th {
+    background-color: #3498db;
+    color: white;
+    font-weight: bold;
+}
+
+#jobTable tr:nth-child(even) {
+    background-color: #f8f9fa;
+}
+
+#jobTable tr:hover {
+    background-color: #e8f4fc;
+}
+
+.status-badge {
+    padding: 5px 10px;
+    border-radius: 20px;
+    color: white;
+    font-size: 0.85rem;
+    font-weight: bold;
+}
+
+.status-已投递 { background-color: #95a5a6; }
+.status-初面 { background-color: #3498db; }
+.status-二面 { background-color: #2980b9; }
+.status-终面 { background-color: #1abc9c; }
+.status-Offer { background-color: #2ecc71; }
+.status-拒信 { background-color: #e74c3c; }
+
+/* Gantt chart styles */
+#ganttChart {
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    padding: 20px;
+    overflow-x: auto;
+    min-height: 500px;
+}
+
+.gantt-container {
+    position: relative;
+    min-width: 1000px;
+}
+
+.gantt-header {
+    display: flex;
+    border-bottom: 2px solid #333;
+    margin-bottom: 10px;
+}
+
+.gantt-time-axis {
+    display: flex;
+    height: 40px;
+    border-bottom: 1px solid #eee;
+}
+
+.time-slot {
+    min-width: 50px;
+    padding: 5px;
+    text-align: center;
+    border-right: 1px solid #eee;
+    font-size: 0.8rem;
+}
+
+.gantt-body {
+    position: relative;
+}
+
+.gantt-row {
+    display: flex;
+    height: 50px;
+    align-items: center;
+    border-bottom: 1px solid #eee;
+    position: relative;
+}
+
+.gantt-company {
+    min-width: 150px;
+    padding: 0 10px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+}
+
+.gantt-timeline {
+    flex-grow: 1;
+    height: 100%;
+    position: relative;
+}
+
+.timeline-item {
+    position: absolute;
+    height: 30px;
+    top: 10px;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 0.8rem;
+    font-weight: bold;
+    cursor: pointer;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+/* Empty state */
+.empty-state {
+    text-align: center;
+    padding: 50px 20px;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    margin-top: 30px;
+}
+
+.empty-state p {
+    font-size: 1.2rem;
+    color: #7f8c8d;
+    margin-bottom: 20px;
+}
+
+/* Modal styles */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.5);
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 5% auto;
+    padding: 20px;
+    border: none;
+    border-radius: 10px;
+    width: 90%;
+    max-width: 500px;
+    position: relative;
+    animation: modalAppear 0.3s ease;
+}
+
+@keyframes modalAppear {
+    from { opacity: 0; transform: translateY(-50px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.close {
+    position: absolute;
+    right: 15px;
+    top: 15px;
+    color: #aaa;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.close:hover {
+    color: #000;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #333;
+}
+
+.form-group input,
+.form-group select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+.form-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .container {
+        padding: 10px;
+    }
+    
+    header h1 {
+        font-size: 2rem;
+    }
+    
+    .actions {
+        flex-direction: column;
+    }
+    
+    .filters {
+        flex-direction: column;
+    }
+    
+    #jobTable {
+        font-size: 0.9rem;
+    }
+    
+    #jobTable th,
+    #jobTable td {
+        padding: 8px 10px;
+    }
+    
+    .gantt-container {
+        min-width: 600px;
+    }
+    
+    .time-slot {
+        min-width: 40px;
+        font-size: 0.7rem;
+    }
+    
+    .gantt-row {
+        height: 60px;
+    }
+    
+    .timeline-item {
+        height: 40px;
+        top: 5px;
+    }
+    
+    .modal-content {
+        width: 95%;
+        margin: 10% auto;
+    }
+}
+
+@media (max-width: 480px) {
+    header h1 {
+        font-size: 1.5rem;
+    }
+    
+    .view-toggle button {
+        padding: 8px 15px;
+        font-size: 0.9rem;
+    }
+    
+    .btn-primary,
+    .btn-secondary {
+        width: 100%;
+        padding: 12px;
+    }
+    
+    .gantt-container {
+        min-width: 400px;
+    }
+    
+    .time-slot {
+        min-width: 30px;
+        font-size: 0.6rem;
+    }
+}
